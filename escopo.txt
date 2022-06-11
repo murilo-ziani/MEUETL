@@ -1,0 +1,10 @@
+1. Fazer requisições utilizando a PUNK API para extrair informações sobre as cervejas da Cervejaria BrewDog ('https://punkapi.com/documentation/v2')
+
+2. Sintetizar os dados para criação de um catálogo contendo as seguintes informações:
+- nome da cerveja
+- estilo da cerveja
+- image url
+- abv
+- ibu
+- lúpulos utilizados
+- melhores combinações de pratos
