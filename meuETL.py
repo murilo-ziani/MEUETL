@@ -15,7 +15,7 @@ class Extract():
     def beer_information(self):
         
         beer_information = {}
-        for id in range(1, 10):
+        for id in range(1, 326):
             # Definindo objeto a ser requisitado
             beers = f'{self.url}/{id}'
             print(beers)
