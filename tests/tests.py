@@ -16,11 +16,10 @@ class Tests:
         assert isinstance(beer_information[1], dict)
         assert isinstance(beer_information[1][4], list)
 
-    def writer_csv(self):
+    def writer_csv(self, file_name):
         obj = writer
         assert isinstance(obj, writer)
 
         file_name = writer(file_name)
         assert isinstance(file_name, str)
         assert exists(f'./{file_name}/{file_name}.csv')
-        
