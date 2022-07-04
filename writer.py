@@ -1,4 +1,5 @@
-from meuETL import Extract
+from requisitor import Extract
+from pathlib import Path
 import pandas as pd
 
 # Classe para gravar arquivos em CSV
@@ -9,11 +10,9 @@ class writer:
         self.beer_information = self.extract.get_beer_information
         
     
-    def writer(self):
+    def writer(self, file_name=None):
+        path = Path(f'./{file_name}').mkdir(parents=True, exist_ok=True)
         df = pd.DataFrame.from_dict(self.beer_information)
-        d = pd.DataFrame(df).set_index('ID')
-        arquivo = d.transpose()
-        return arquivo.to_csv('Catalogo.csv')
-
-information = writer()
-catalogo = information.writer()
+        arquivo = df.transpose()
+        arquivo.index.name = "ID"
+        return arquivo.to_csv(f'./{file_name}/{file_name}.csv', index=True)
